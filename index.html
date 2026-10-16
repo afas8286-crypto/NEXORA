@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>NEXORA | کارگاه ساخت پروژه‌های کار و فناوری</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="logo">N</div><div><strong>NEXORA</strong><small>کارگاه ساخت پروژه‌های کار و فناوری کار و فناوری</small></div></div>
+  <span class="tag">ویژهٔ پایه نهم</span>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><span class="eyebrow">ایده بگیر • بساز • آزمایش کن</span>
+  <h1>پروژه‌ات رو <em>خودت بساز!</em></h1>
+  <p>فقط برای درس کار و فناوری پایه نهم: پروژه‌های ساختنیِ خیلی آسان با وسایل دم‌دستی، همراه مراحل ساخت، آزمایش و گزارش کار.</p>
+  <a href="#projects" class="primary">دیدن پروژه‌ها ↓</a></div>
+  <div class="hero-art" aria-hidden="true"><div class="orb">✦</div><div class="tool t1">✂️</div><div class="tool t2">📐</div><div class="tool t3">💡</div><div class="tool t4">🧩</div></div>
+</section>
+<section class="stats"><div><b id="count">۲۰</b><span>ایدهٔ ساخت گروهی</span></div><div><b id="groupCount">۰</b><span>گروه ثبت‌شده</span></div><div><b id="submittedCount">۰</b><span>گزارش ثبت‌شده</span></div></section>
+<section id="projects" class="section">
+  <div class="section-head"><div><span class="eyebrow">کتابخانهٔ ساخت</span><h2>پروژه‌های خیلی آسان</h2><p>فقط پروژه‌های ساختنیِ مناسب درس کار و فناوری پایه نهم؛ یکی را انتخاب کن و قدم‌به‌قدم بساز.</p></div></div>
+  <div class="filters"><input id="search" placeholder="🔎 جست‌وجوی پروژه..." aria-label="جست‌وجو">
+  <select id="category" aria-label="دسته‌بندی"><option value="همه">همهٔ دسته‌ها</option><option>بازیافتی</option><option>سازمان‌دهی</option><option>طراحی</option><option>آزمایش ساده</option></select></div>
+  <div id="projectGrid" class="grid"></div>
+</section>
+<section class="section group-section" id="group">
+  <div class="section-head"><div><span class="eyebrow">همکاری تیمی</span><h2>گروه پروژهٔ ما</h2><p>اعضا، وظایف و وضعیت انجام پروژه را ثبت کن. اطلاعات فعلاً روی همین دستگاه ذخیره می‌شود.</p></div></div>
+  <form id="groupForm" class="group-form">
+    <label>نام گروه<input id="groupName" required placeholder="مثلاً مخترعان کوچک"></label>
+    <label>نام اعضا<input id="members" required placeholder="مثلاً سارا، امیر، نیکان"></label>
+    <label>پروژهٔ انتخابی<select id="groupProject"></select></label>
+    <label>وضعیت<select id="groupStatus"><option>شروع نشده</option><option>در حال انجام</option><option>انجام شد</option></select></label>
+    <label class="wide">تقسیم وظایف<textarea id="tasks" rows="3" placeholder="مثلاً سارا: برش؛ امیر: چسباندن؛ نیکان: گزارش"></textarea></label>
+    <button class="primary" type="submit">ذخیرهٔ گروه</button>
+  </form>
+  <div id="savedGroups" class="saved-groups"></div>
+</section>
+<section class="section report-section" id="reportSection"><div><span class="eyebrow">آمادهٔ تحویل به معلم</span><h2>قالب گزارش کار</h2><p>پس از ساخت پروژه، این موارد را تکمیل کن و گزارش را کپی بگیر.</p></div>
+  <div class="report-grid"><label>نام پروژه<input id="reportTitle" placeholder="نام پروژه"></label><label>چه چیزی ساختم؟<textarea id="reportGoal" rows="2"></textarea></label><label>چه وسایلی استفاده کردم؟<textarea id="reportTools" rows="2"></textarea></label><label>نتیجهٔ آزمایش و چیزی که یاد گرفتم<textarea id="reportResult" rows="2"></textarea></label></div>
+  <button id="makeReport" class="secondary">ساخت گزارش</button><textarea id="reportOutput" class="report-output" rows="7" readonly placeholder="گزارش اینجا ساخته می‌شود..."></textarea><button id="copyReport" class="secondary">کپی گزارش</button><button id="submitReport" class="primary">ثبت گزارش برای بررسی معلم</button><span id="notice" role="status"></span><div id="submittedReports" class="saved-groups"></div>
+</section>
+<section class="section teacher-section" id="teacher">
+  <div class="section-head"><div><span class="eyebrow">ویژهٔ معلم</span><h2>بررسی گزارش‌های گروه‌ها</h2><p>این بخش در نسخهٔ فعلی فقط روی همین مرورگر کار می‌کند؛ ارسال اینترنتی هنوز فعال نیست.</p></div></div>
+  <div id="teacherReports" class="saved-groups"></div>
+</section>
+</main>
+<footer>ساخته‌شده توسط دانش‌آموز پایه نهم</footer>
+<dialog id="detailDialog"><button class="close" id="closeDialog" aria-label="بستن">×</button><div id="detailContent"></div></dialog>
+<script src="app.js"></script>
+</body></html>
